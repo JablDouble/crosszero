@@ -1,0 +1,3 @@
+Players take turns placing on the free cells of the field 3x3 signs (one always crosses, the other always zeros).
+The first, which has built up 3 of its figures vertically, horizontally or diagonally, wins.
+ The first move is made by the player who places the crosses.
