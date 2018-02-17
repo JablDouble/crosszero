@@ -1,5 +1,6 @@
 package com.jabl;
 
+import java.io.IOException;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -22,15 +23,22 @@ public class Player extends Thread {
                     }
                     if(checkStep(step)) {
                         Game.clearScreen();
-                        Game.redact(step);
+                        try {
+                            Game.redact(step);
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        } catch (ClassNotFoundException e) {
+                            e.printStackTrace();
+                        }
                     }else {
                         System.out.println("Нельзя вводить клетки, где стоит уже крестик или нолик");
                     }
-                    if(Game.getSteps() == 9 && Game.checkoutWin())
+                    if(Game.getSteps() == 9 && Game.checkoutWin()) {
                         System.out.println("Ничья!");
+
                         }
                     }
-            //}
+            }
         }
 
         public static boolean checkStep(int step){
